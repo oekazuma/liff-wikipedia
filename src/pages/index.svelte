@@ -1,15 +1,21 @@
 <script>
-  import liff from "@line/liff";
-
   window.onload = function (e) {
-    liff.init({liffId: LIFF_ID},function (data) {
-      initializeApp(data);
-    });
+    liff
+      .init({
+        liffId: LIFF_ID,
+      })
+      .then((data) => {
+        initializeApp(data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   };
 
   function initializeApp(data) {
     document.getElementById("languagefield").textContent = data.language;
-    document.getElementById("viewtypefield").textContent = data.context.viewType;
+    document.getElementById("viewtypefield").textContent =
+      data.context.viewType;
     document.getElementById("useridfield").textContent = data.context.userId;
     document.getElementById("utouidfield").textContent = data.context.utouId;
     document.getElementById("roomidfield").textContent = data.context.roomId;
@@ -116,6 +122,50 @@
     }
   }
 </script>
+
+<style>
+  table {
+    width: 100%;
+    table-layout: fixed;
+    word-break: break-all;
+  }
+
+  .div {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  #profilepicturediv {
+    text-align: center;
+  }
+
+  img {
+    max-width: 25%;
+    height: auto;
+  }
+
+  #profileimagediv {
+    height: 100px;
+    width: 100px;
+  }
+
+  #contextinfo {
+    display: none;
+  }
+
+  #accesstokendata,
+  #profileinfo {
+    display: none;
+  }
+
+  .buttongroup {
+    text-align: center;
+  }
+
+  button {
+    margin: 4px;
+  }
+</style>
 
 <div class="buttongroup">
   <div class="buttonrow">
