@@ -8,6 +8,7 @@ import { copySync, removeSync } from 'fs-extra'
 import { spassr } from 'spassr'
 import getConfig from '@roxi/routify/lib/utils/config'
 import autoPreprocess from 'svelte-preprocess'
+import replace from '@rollup/plugin-replace';
 
 
 const { distDir } = getConfig() // use Routify's distDir for SSOT
@@ -47,6 +48,9 @@ export default {
         chunkFileNames: `[name]${production && '-[hash]' || ''}.js`
     },
     plugins: [
+        replace({
+            LIFF_ID: JSON.stringify(process.env.LIFF_ID),
+        }),
         svelte({
             dev: !production, // run-time checks      
             // Extract component CSS — better performance
