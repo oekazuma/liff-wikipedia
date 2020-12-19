@@ -1,13 +1,15 @@
 # liff-wikipedia
 
-### npm scripts
+### 使用技術
 
-| Syntax        | Description                                                               |
-| ------------- | ------------------------------------------------------------------------- |
-| `dev`         | Development (port 5000)                                                   |
-| `dev:nollup`  | Development with crazy fast rebuilds (port 5000)                          |
-| `dev-dynamic` | Development with dynamic imports                                          |
-| `build`       | Build a bundled app with SSR + prerendering and dynamic imports           |
-| `serve`       | Run after a build to preview. Serves SPA on 5000 and SSR on 5005          |
-| `deploy:*`    | Deploy to netlify or now                                                  |
-| `export`      | Create static pages from content in dist folder (used by `npm run build`) |
+- [Svelte](https://svelte.dev/) 3.29.4
+- [Routify](https://routify.dev/) 2.5.1-next-major
+- [TailwindCSS](https://tailwindcss.com/) 2.0.2
+- [LIFF](https://developers.line.biz/ja/reference/liff/) 2.6.0
+
+### 開発
+
+```
+npm i
+npm run dev
+```
