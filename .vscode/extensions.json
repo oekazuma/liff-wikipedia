@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "heybourn.headwind",
+    "svelte.svelte-vscode",
+    "ardenivanov.svelte-intellisense",
+    "bradlc.vscode-tailwindcss",
+    "fivethree.vscode-svelte-snippets"
+  ]
+}
